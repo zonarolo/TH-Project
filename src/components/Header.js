@@ -8,10 +8,8 @@ const Header = (props) => {
         <ul>
           {props.routes.map((prop, key) => {
             return (
-              <li>
-                <NavLink to={prop.path} key={key}>
-                  {prop.name}
-                </NavLink>
+              <li key={key}>
+                <NavLink to={prop.path}>{prop.name}</NavLink>
               </li>
             );
           })}
