@@ -6,6 +6,7 @@ import routes from './routes';
 
 class App extends Component {
   getRoutes = (routes) => {
+    // if(isLoading) return <div>Loading...</div>
     return routes.map((prop, key) => (
       <Route
         path={prop.path}

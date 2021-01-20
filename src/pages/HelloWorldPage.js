@@ -11,11 +11,15 @@ const HelloWorldPage = () => {
 
     onSubmit: (values) => {
       setFirstName(values.firstName);
+      setUsedForm(false);
+      setDate(`Now it is ${new Date()}`);
     },
   });
 
+  const [usedForm, setUsedForm] = useState(false);
+  const [date, setDate] = useState('');
   const [firstName, setFirstName] = useState('');
-  const isFieldAvailable = formik.values.firstName === '';
+  // const isFieldAvailable = formik.values.firstName === '';
 
   const onCancel = () => {
     formik.resetForm();
@@ -23,14 +27,14 @@ const HelloWorldPage = () => {
   };
 
   const goToUserPage = () => {
-    history.push('/userpage');
+    history.push('/userprofile');
   };
 
   return (
     <>
-      {firstName || 'How are you?'}
+      {firstName || <h1>How are you?</h1>}
       <form onSubmit={formik.handleSubmit}>
-        <label htmlFor="firstName">First Name</label>
+        <label htmlFor="firstName">Fill your name</label>
         <input
           id="firstName"
           name="firstName"
@@ -39,21 +43,13 @@ const HelloWorldPage = () => {
           value={formik.values.firstName}
         />
 
-        <button type="submit" disabled={isFieldAvailable}>
+        <button type="submit" disabled={usedForm}>
           Submit
         </button>
-        <button
-          onClick={() => onCancel()}
-          type="button"
-          disabled={isFieldAvailable}
-        >
+        <button onClick={() => onCancel()} type="button" disabled={usedForm}>
           Cancel
         </button>
-        <button
-          onClick={() => onCancel()}
-          type="button"
-          disabled={!isFieldAvailable}
-        >
+        <button onClick={() => onCancel()} type="button" disabled={!usedForm}>
           Exit
         </button>
       </form>
