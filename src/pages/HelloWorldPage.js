@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useFormik } from 'formik';
+import Button from 'react-bootstrap/Button';
 
 const HelloWorldPage = () => {
   const history = useHistory();
@@ -43,15 +44,15 @@ const HelloWorldPage = () => {
           value={formik.values.firstName}
         />
 
-        <button type="submit" disabled={usedForm}>
+        <Button type="submit" disabled={usedForm}>
           Submit
-        </button>
-        <button onClick={() => onCancel()} type="button" disabled={usedForm}>
+        </Button>
+        <Button onClick={() => onCancel()} type="button" disabled={usedForm}>
           Cancel
-        </button>
-        <button onClick={() => onCancel()} type="button" disabled={!usedForm}>
+        </Button>
+        <Button onClick={() => onCancel()} type="button" disabled={!usedForm}>
           Exit
-        </button>
+        </Button>
       </form>
     </>
   );
