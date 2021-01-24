@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
-body {
+/* body {
+  padding: 2rem;
+} */
+
+#button {
+  margin: 0.5rem;
+}
+
+.pad {
   padding: 2rem;
 }

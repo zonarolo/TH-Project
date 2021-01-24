@@ -54,6 +54,8 @@ const Header = (props) => {
               </ul>
             </li>
           </ul>
+        </div>
+        <div class="d-flex">
           <LoginButton />
           <LogoutButton />
         </div>

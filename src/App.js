@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import routes from './routes';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './components/Footer';
 
 class App extends Component {
   getRoutes = (routes) => {
@@ -23,6 +24,7 @@ class App extends Component {
           <Header routes={routes} />
           <Switch>{this.getRoutes(routes)}</Switch>
         </header>
+        <Footer />
       </div>
     );
   }
